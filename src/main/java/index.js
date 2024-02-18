@@ -1,3 +1,13 @@
+const antall = "";
+
+const fornavn ="";
+
+const etternavn ="";
+
+const telefonnr = "";
+
+const epost = "";
+
 let billet = {
     film: document.getElement.By.Id("film").value,
     antall: document.getElement.By.Id("antall").value,
