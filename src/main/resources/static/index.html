@@ -3,15 +3,37 @@
 <head>
     <meta charset="UTF-8">
     <title>Kinobiletter</title>
-    <script src="../../java/index.js"></script>
+    <script src="index.js"></script>
+    //Styling for følgende klasser
+    <style>
+        #filmValidering{
+            display: none;
+        }
+        #antall-validering{
+            display: none;
+        }
+        #fornavn-validering{
+            display: none;
+        }
+        #etternavn-validering{
+            display: none;
+        }
+        #telefonnr-validering{
+            display: none;
+        }
+        #epost-validering{
+            display: none;
+        }
+
+    </style>
 </head>
 <body>
     <h1>Bestilling av kinobiletter</h1>
 
     <table>
         <tr><td>
-            <label for="film">Velg en film</label>
-            <select id="film" name="film">
+            <label for="filmValg">Velg film her</label>
+            <select id="filmValg" name="filmValg">
                 <option>Velg film her</option>
                 <option>Interstellar</option>
                 <option>Inception</option>
@@ -20,7 +42,7 @@
                 <option>Catch Me If You Can</option>
             </select>
         </td><td>
-            <div id="film-validering"></div>
+            <div id="filmValidering"></div>
         </td></tr>
     </table>
 
@@ -28,36 +50,34 @@
         <table>
             <tr>
                 <td><label for="antall">Antall</label></td>
-                <td><input type="text" id="antall" style="width: 45px; margin-bottom: 10px; margin-top: 5px;" required min="1"></td>
-                <td><div id="antall-validering"></div></td>
+                <td><input type="text" id="antall" style="width: 50px; margin-bottom: 20px; margin-top: 10px;" required min="1"></td>
+                <td><span class="text-danger" id="antall-validering">Du må legge inn minst en billett</span></td>
             </tr>
             <tr>
                 <td><label for="fornavn">Fornavn</label></td>
                 <td><input type="text" id="fornavn" required></td>
-                <td><div id="fornavn-validering"></div></td>
+                <td><span class="text-danger" id="fornavn-validering">Du må skrive inn et gyldig fornavn</span></td>
             </tr>
             <tr>
                 <td><label for="etternavn">Etternavn</label></td>
                 <td><input type="text" id="etternavn" required></td>
-                <td><div id="etternavn-validering"></div></td>
+                <td><span class="text-danger" id="etternavn-validering">Du må skrive inn et gyldig etternavn</span></td>
             </tr>
             <tr>
                 <td><label for="telefonnr">Telefonr</label></td>
                 <td><input type="tel" id="telefonnr" required></td>
-                <td><div id="telefonnr-validering"></div></td>
+                <td><span class="text-danger" id="telefonnr-validering">Du må skrive inn et gyldig telefonnummer</span></td>
             </tr>
             <tr>
                 <td><label for="epost">Email</label></td>
                 <td><input type="email" id="epost" required></td>
-                <td><div id="epost-validering"></div></td>
+                <td><span class="text-danger" id="epost-validering">Du må skrive inn en gyldig e-post adresse</span></td>
             </tr>
         </table>
-        <button type="button" id="kjopBillett" onclick="validerInput()">Kjøp billett</button>
-    </br>
+        <button type="button" id="kjopBillett" onclick="innhentingAvInput()" class="btn btn-success">Kjøp billett</button>
     </form>
-
     <h2>Alle billetter</h2>
-    <button onclick="slettBillettene();">Slett billettene</button>
-
+    <button type="button" id="slettBillett" onclick="slettBillettene()" class="btn btn-danger">Slett alle billettene</button>
+    <div id="billettene"></div>
 </body>
 </html>

@@ -33,7 +33,7 @@ function visBilletter(){
     console.log(billettene)
     document.getElementById("billettListe").innerHTML=ut;
 }
-function valideringAvInput(){
+function validerInput(){
 
     const film = document.getElementById("film").value;
     const antall = document.getElementById("antall").value;
@@ -49,5 +49,10 @@ function valideringAvInput(){
 
     }
     opprettBillett();
+}
+
+function slettBillettene(){
+    billettListe.length = 0;
+    visBilletter();
 }
 
