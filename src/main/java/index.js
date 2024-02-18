@@ -1,12 +1,10 @@
 const antall = "";
-
 const fornavn ="";
-
 const etternavn ="";
-
 const telefonnr = "";
-
 const epost = "";
+
+let ut = "";
 
 let billet = {
     film: document.getElement.By.Id("film").value,
@@ -31,6 +29,10 @@ function sjekk () {
     } else {
         alert("Tallet er :"+antall);
     }
+}
+
+function validerInput (){
+
 }
 
 function opprettBillett() { const billett={
