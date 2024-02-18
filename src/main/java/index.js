@@ -33,7 +33,21 @@ function visBilletter(){
     console.log(billettene)
     document.getElementById("billettListe").innerHTML=ut;
 }
-function validerInput (){
+function valideringAvInput(){
 
+    const film = document.getElementById("film").value;
+    const antall = document.getElementById("antall").value;
+    const fornavn = document.getElementById("fornavn").value;
+    const etternavn = document.getElementById("etternavn").value;
+    const telefonNr = document.getElementById("telefonnr").value;
+    const email = document.getElementById("epost").value;
+
+
+    if(antall ===null || fornavn === null || etternavn === null || telefonNr === null || email === null){
+        alert("Har aldri sett noen ta så feil!");
+    } else {
+
+    }
+    opprettBillett();
 }
 
