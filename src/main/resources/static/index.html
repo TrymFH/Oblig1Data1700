@@ -2,9 +2,9 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Kinobiletter</title>
+    <title>Bestilling av kinobiletter</title>
     <script src="index.js"></script>
-    //Styling for følgende klasser
+
     <style>
         #filmValidering{
             display: none;
@@ -28,56 +28,54 @@
     </style>
 </head>
 <body>
-    <h1>Bestilling av kinobiletter</h1>
-
+<h1>Bestilling av kinobilletter</h1>
+<table>
+    <tr><td>
+        <label for="film-select">Velg en film</label>
+        <select id="film-select" name="film-select">
+            <option value="1">Velg film her</option>
+            <option>Interstellar</option>
+            <option>Inception</option>
+            <option>Tenet</option>
+            <option>The Prestige</option>
+            <option>Catch Me If you Can</option>
+        </select>
+    </td><td>
+        <span class="text-danger" id="filmValidering">Du må velge en film</span>
+    </td></tr>
+</table>
+<form id="billettSkjema">
     <table>
-        <tr><td>
-            <label for="filmValg">Velg film her</label>
-            <select id="filmValg" name="filmValg">
-                <option>Velg film her</option>
-                <option>Interstellar</option>
-                <option>Inception</option>
-                <option>The Prestige</option>
-                <option>Tenet</option>
-                <option>Catch Me If You Can</option>
-            </select>
-        </td><td>
-            <div id="filmValidering"></div>
-        </td></tr>
+        <tr>
+            <td><label for="antall">Antall</label></td>
+            <td><input type="text" id="antall" style="width: 50px; margin-bottom: 20px; margin-top: 10px;" required min="1"></td>
+            <td><span class="text-danger" id="antall-validering">Du må legge inn minst en billett</span></td>
+        </tr>
+        <tr>
+            <td><label for="fornavn">Fornavn</label></td>
+            <td><input type="text" id="fornavn" required></td>
+            <td><span class="text-danger" id="fornavn-validering">Du må skrive inn et gyldig fornavn</span></td>
+        </tr>
+        <tr>
+            <td><label for="etternavn">Etternavn</label></td>
+            <td><input type="text" id="etternavn" required></td>
+            <td><span class="text-danger" id="etternavn-validering">Du må skrive inn et gyldig etternavn</span></td>
+        </tr>
+        <tr>
+            <td><label for="telefonnr">TelefonNr</label></td>
+            <td><input type="tel" id="telefonnr" required></td>
+            <td><span class="text-danger" id="telefonnr-validering">Du må skrive inn et gyldig telefonnummer</span></td>
+        </tr>
+        <tr>
+            <td><label for="epost">Epost</label></td>
+            <td><input type="email" id="epost" required></td>
+            <td><span class="text-danger" id="epost-validering">Du må skrive inn en gyldig e-post adresse</span></td>
+        </tr>
     </table>
-
-    <form id="billettSkjema">
-        <table>
-            <tr>
-                <td><label for="antall">Antall</label></td>
-                <td><input type="text" id="antall" style="width: 50px; margin-bottom: 20px; margin-top: 10px;" required min="1"></td>
-                <td><span class="text-danger" id="antall-validering">Du må legge inn minst en billett</span></td>
-            </tr>
-            <tr>
-                <td><label for="fornavn">Fornavn</label></td>
-                <td><input type="text" id="fornavn" required></td>
-                <td><span class="text-danger" id="fornavn-validering">Du må skrive inn et gyldig fornavn</span></td>
-            </tr>
-            <tr>
-                <td><label for="etternavn">Etternavn</label></td>
-                <td><input type="text" id="etternavn" required></td>
-                <td><span class="text-danger" id="etternavn-validering">Du må skrive inn et gyldig etternavn</span></td>
-            </tr>
-            <tr>
-                <td><label for="telefonnr">Telefonr</label></td>
-                <td><input type="tel" id="telefonnr" required></td>
-                <td><span class="text-danger" id="telefonnr-validering">Du må skrive inn et gyldig telefonnummer</span></td>
-            </tr>
-            <tr>
-                <td><label for="epost">Email</label></td>
-                <td><input type="email" id="epost" required></td>
-                <td><span class="text-danger" id="epost-validering">Du må skrive inn en gyldig e-post adresse</span></td>
-            </tr>
-        </table>
-        <button type="button" id="kjopBillett" onclick="innhentingAvInput()" class="btn btn-success">Kjøp billett</button>
-    </form>
-    <h2>Alle billetter</h2>
-    <button type="button" id="slettBillett" onclick="slettBillettene()" class="btn btn-danger">Slett alle billettene</button>
-    <div id="billettene"></div>
+    <button type="button" id="kjopBillett" onclick="hentInput()" class="btn btn-success">Kjøp billett</button>
+</form>
+<h2>Alle billetter</h2>
+<button type="button" id="slettBilettene" onclick="slettBilettene()" class="btn btn-danger">Slett alle billettene</button>
+<div id="billettene"></div>
 </body>
 </html>
