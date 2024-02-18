@@ -23,7 +23,7 @@ function sjekk () {
     }
 }
 
-function kjoptBillet() { const billett={
+function opprettBillett() { const billett={
     film: document.getElementById("film").value,
     antall : document.getElementById("antall").value,
     firstname: document.getElementById("fornavn").value,
@@ -38,7 +38,7 @@ function kjoptBillet() { const billett={
         document.getElementById("TelefonNrError").innerHTML = "Vennigts fyll inn felt";
         document.getElementById("EpostError").innerHTML = "Vennigts fyll inn felt";
     } else {
-
+        bilettene.push(billett);
     }
 }
 
