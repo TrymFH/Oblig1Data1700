@@ -12,4 +12,4 @@ Fullt navn: Trym Fjøsne-Hexeberg
 
 Kort beskrivelse av applikasjonen: 
 
-fdfse
+En applikasjon som ...
