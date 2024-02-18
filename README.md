@@ -12,4 +12,4 @@ Fullt navn: Trym Fjøsne-Hexeberg
 
 Kort beskrivelse av applikasjonen: 
 
-En applikasjon som ...
+En applikasjon som tar inn input fra klient og sier ifra om feil. Lager billett og tømmer på kommando.
